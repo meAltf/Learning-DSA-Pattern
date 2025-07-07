@@ -1,6 +1,6 @@
 package PrefixSum;
 
-public class RangeSumQueryImmutable {
+public class RangeSumQueryImmutableBruteForce {
 
     class NumArray {
         private int[] arr;
