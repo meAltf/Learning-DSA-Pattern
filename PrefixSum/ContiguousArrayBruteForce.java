@@ -1,9 +1,6 @@
 package PrefixSum;
 
-import java.util.HashMap;
-import java.util.Map;
-
-public class ContiguousArray {
+public class ContiguousArrayBruteForce {
 
     public int findMaxLength(int[] nums) {
         int maxCnt = 0, n = nums.length;
