@@ -15,6 +15,5 @@ public class TwoSumIIBruteForce {
             }
         }
         return result;
-
     }
 }
