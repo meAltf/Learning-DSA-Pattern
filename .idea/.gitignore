@@ -10,12 +10,10 @@ Learning-DSA-Pattern/out/production/
 
 *.class
 *.log
-/out/
 out/production/
 
 
 # IntelliJ project files |
-.idea/
 *.iml
 *.iws
 *.ipr
@@ -24,12 +22,6 @@ out/production/
 /.idea/**/workspace.xml
 /.idea/**/tasks.xml
 /.idea/**/shelf/
-
-# Compiled class files
-*.class
-
-# Log files
-*.log
 
 # Maven / Gradle directories
 target/
