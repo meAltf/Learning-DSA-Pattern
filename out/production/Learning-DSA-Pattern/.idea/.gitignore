@@ -3,12 +3,3 @@
 /workspace.xml
 # Environment-dependent path to Maven home directory
 /mavenHomeManager.xml
-.idea/
-
-/Learning-DSA-Pattern/
-Learning-DSA-Pattern/out/production/
-
-*.class
-*.log
-/out/
-out/production/
