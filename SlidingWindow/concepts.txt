@@ -1,0 +1,7 @@
+ Sliding window Questions List :
+
+ Maximum Average Subarray I (LeetCode #643)
+
+ Longest Substring Without Repeating Characters (LeetCode #3)
+
+ Minimum Window Substring (LeetCode #76)
