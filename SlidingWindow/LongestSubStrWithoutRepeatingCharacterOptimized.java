@@ -4,7 +4,7 @@ import java.util.HashSet;
 
 public class LongestSubStrWithoutRepeatingCharacterOptimized {
 
-    public int lengthOfLongestSubstring(String s) {
+    public static int lengthOfLongestSubstring(String s) {
         int n = s.length(), maxCnt = 0;
         int left = 0, right = 0;
         HashSet<Character> set = new HashSet<>();
@@ -20,5 +20,11 @@ public class LongestSubStrWithoutRepeatingCharacterOptimized {
             }
         }
         return maxCnt;
+    }
+
+    public static void main(String[] args) {
+        String str = "pwwkew"; // abcabcbb
+        int result = lengthOfLongestSubstring(str);
+        System.out.println("Result is: " + result);
     }
 }
