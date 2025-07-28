@@ -93,7 +93,10 @@ public class ReverseLinkedList {
     public static void main(String[] args) {
         int[] values = {1, 2, 3, 4, 5};
         ListNode head = createLinkedList(values);
+        System.out.println("Before reverse");
+        printLinkedList(head);
         ListNode head2 = reverseList(head);
+        System.out.println("After reverse");
         printLinkedList(head2);
     }
 }
