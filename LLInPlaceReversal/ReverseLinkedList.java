@@ -50,18 +50,44 @@ public class ReverseLinkedList {
         ListNode temp = head;
 
         // put into stack
-        while(temp != null){
+        while (temp != null) {
             stack.push(temp.val);
             temp = temp.next;
         }
 
         // remove one by one and move further
         temp = head;
-        while(temp != null){
-           temp.val = stack.pop();
-           temp = temp.next;
+        while (temp != null) {
+            temp.val = stack.pop();
+            temp = temp.next;
         }
         return head;
+    }
+
+    // Way-2 | using ListNode directly instead of listNode.val
+    public ListNode reverseList2(ListNode head) {
+        if (head == null || head.next == null) return head;
+
+        Stack<ListNode> stack = new Stack<>();
+        ListNode temp = head;
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }
+
+        // newHead -> firstNode of stack now.
+        // currentNode -> to move the node every iteration
+        ListNode newHead = stack.peek();
+        ListNode current = newHead;
+
+        while (!stack.isEmpty()) {
+            current.next = stack.pop();
+            current = current.next;
+        }
+
+        // do not forget to mark last node to null
+        current.next = null;
+        return newHead;
     }
 
     public static void main(String[] args) {
