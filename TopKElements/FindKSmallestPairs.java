@@ -20,7 +20,7 @@ public class FindKSmallestPairs {
         }
 
         // 2. sort them by sum
-        Collections.sort(resultPairs, (a, b) -> a.get(0) + a.get(1) - b.get(0) + b.get(1));
+        Collections.sort(resultPairs, (a, b) -> (a.get(0) + a.get(1)) - (b.get(0) + b.get(1)));
 
         // 3. find first k pairs
         return resultPairs.subList(0, Math.min(k, resultPairs.size()));
@@ -28,9 +28,9 @@ public class FindKSmallestPairs {
     }
 
     public static void main(String[] args) {
-        int[] nums1 = {1, 7, 11};
-        int[] nums2 = {2, 4, 6};
-        int k = 3;
+        int[] nums1 = {1, 1, 2};
+        int[] nums2 = {1, 2, 3};
+        int k = 2;
 
         FindKSmallestPairs findKSmallestPairs = new FindKSmallestPairs();
 
