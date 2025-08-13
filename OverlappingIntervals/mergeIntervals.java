@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class mergeIntervalsBruteForce {
+public class mergeIntervals {
 
     private static int[][] merge(int[][] intervals) {
         List<int[]> resultList = new ArrayList<>();
