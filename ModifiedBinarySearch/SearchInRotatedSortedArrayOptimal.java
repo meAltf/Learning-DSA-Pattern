@@ -2,17 +2,35 @@ package ModifiedBinarySearch;
 
 public class SearchInRotatedSortedArrayOptimal {
 
-    private static int findPivot(int[] nums) {
+    private static int findPivotBS(int[] nums) {
         int n = nums.length;
+        int low = 0, high = n - 1;
 
-        for (int i = 1; i < n; i++) {
-            if (nums[i - 1] > nums[i]) {
-                return i;
-            }
+        // if no rotation of array happened
+        if (nums[low] <= nums[high]) return 0;
+
+        while (low < high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] > nums[high]) {
+                low = mid + 1;
+            } else high = mid;
         }
-        return 0;
+        return low;
     }
 
+    /**
+     * private static int findPivot(int[] nums) {
+     * int n = nums.length;
+     * <p>
+     * for (int i = 1; i < n; i++) {
+     * if (nums[i - 1] > nums[i]) {
+     * return i;
+     * }
+     * }
+     * return 0;
+     * }
+     **/
     private static int BinarySearch(int[] nums, int low, int high, int target) {
         int idx = -1;
 
@@ -32,7 +50,7 @@ public class SearchInRotatedSortedArrayOptimal {
     private static int searchOptimal(int[] nums, int target) {
         int n = nums.length;
         if (n == 0) return -1;
-        int pivotIdx = findPivot(nums);
+        int pivotIdx = findPivotBS(nums);
 
         if (pivotIdx == 0) return BinarySearch(nums, 0, n - 1, target);
 
@@ -47,7 +65,7 @@ public class SearchInRotatedSortedArrayOptimal {
 
     public static void main(String[] args) {
         int[] input = {4, 5, 6, 7, 0, 1, 2};
-        int target = 3;
+        int target = 0;
 
         int result = searchOptimal(input, target);
         System.out.println("Index of the target is: " + result);
