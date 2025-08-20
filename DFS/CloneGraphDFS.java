@@ -1,7 +1,9 @@
 package DFS;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // Definition for a Node.
 class Node {
@@ -43,6 +45,26 @@ public class CloneGraphDFS {
             cloneNode.neighbors.add(cloneGraph(neigh));
         }
 
+        return cloneNode;
+    }
+
+    /** Clone Graph using Map **/
+    private Map<Node, Node> visitedMap = new HashMap<>();
+
+    public Node cloneGraphII(Node node) {
+        if (node == null) return node;
+
+        // check if existing..
+        if (visitedMap.containsKey(node)) return visitedMap.get(node);
+
+        // create a new clone
+        Node cloneNode = new Node(node.data);
+        visitedMap.put(node, cloneNode);
+
+        // iterate over each node
+        for (Node neigh : node.neighbors) {
+            cloneNode.neighbors.add(cloneGraphII(neigh));
+        }
         return cloneNode;
     }
 }
