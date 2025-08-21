@@ -26,7 +26,7 @@ public class PathSumII {
     }
 
     public static List<List<Integer>> pathSum(TreeNode root, int targetSum) {
-        if (root == null) return null;
+        if (root == null) return new ArrayList<>();
         resultList = new ArrayList<>();
         List<Integer> subList = new ArrayList<>();
         int checksSum = 0;
